@@ -1,0 +1,104 @@
+.nav-banner-custom{
+    box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.80);
+}
+
+.hero-image{
+    width: 70vw;
+    height: 60vh;
+    background-image: url("../public/stades_foot_monde.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.shadow-cover{
+    width: 70vw;
+    height: 60vh;
+    position: absolute;
+    background: linear-gradient(1deg,#000000 0%, rgba(255,255,255,0) 80%);
+}
+
+.blue-custom{
+    color: #014aab
+}
+.blue-dark-custom{
+    color: #053a80
+}
+.yellow-custom{
+    color: #ffde59
+}
+.green-custom{
+    color: #00c164
+}
+.bg-blue-custom{
+    background-color: #014aab
+}
+.bg-blue-dark-custom{
+    background-color: #053a80
+}
+.bg-yellow-custom{
+    background-color: #ffde59
+}
+.bg-yellow-dark-custom{
+    background-color: #f5cd34
+}
+.bg-green-custom{
+    background-color: #00c164
+}
+
+.button-y-hover:hover{
+    background-color: #f5cd34;
+    color: #014aab;
+}
+
+.transition-smooth{
+    transition : all .5s ease;
+}
+
+.show-on-hover{
+    max-width: 0;
+}
+.show-on-hover:hover{
+    max-width: 24px;
+}
+
+.marquee {
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 50s linear infinite;
+}
+
+.marquee2 span {
+    animation-delay: 25s;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.pattern-foot{
+    background-image: url("../public/pattern-foot.png");
+    background-blend-mode: multiply;
+
+}
+
+
+
+
+
+
+
+
+
+
