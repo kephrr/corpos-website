@@ -19,12 +19,19 @@
 .ffoot-image-psg{
     background-image: url("/femme-foot-psg.jpg");
 }
+.orga-image{
+    background-image: url("/orga.jpg");
+}
 .hero-image{
     width: 70vw;
     height: 60vh;
     background-image: url("/stades_foot_monde.jpg");
     background-position: center;
     background-size: cover;
+}
+.card{
+    width: 20vw;
+    height: 60vh;
 }
 
 .shadow-cover{
@@ -73,6 +80,11 @@
 .transition-smooth{
     transition : all .5s ease;
 }
+
+.jiggle-animation{
+    rotate: -1.5deg;
+    animation: jumpy 2s ease-in-out infinite;
+}
 .hover-interactive:hover{
     transform: scale(1.05);
 }
@@ -107,6 +119,18 @@
     }
     100% {
         transform: translate(-100%, 0);
+    }
+}
+
+@keyframes jumpy {
+    0%{
+        bottom: -50px;
+    }
+    50%{
+        bottom: -35px;
+    }
+    100%{
+        bottom: -50px;
     }
 }
 

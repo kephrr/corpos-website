@@ -3,7 +3,7 @@ import {useState} from "react";
 
 export default function HeroBanner() {
     const [iconColor, setIconColor] = useState("#ffff");
-    return <div className="overflow-x-hidden max-w-screen p-10 bg-blue-dark-custom">
+    return <div className="overflow-x-hidden max-w-screen p-10 bg-blue-dark-custom pattern-foot">
         <div className="hero-image">
             <div className="shadow-cover flex flex-col justify-end px-5 py-7">
                 <h1 className="text-white bebas-neue-thick text-5xl">PANTHÈRES DE DAKAR CORPOS</h1>
