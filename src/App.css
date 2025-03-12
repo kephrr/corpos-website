@@ -1,11 +1,28 @@
 .nav-banner-custom{
     box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.80);
 }
-
+.team-image{
+    background-image: url("/team.jpg");
+}
+.match-image{
+    background-image: url("/img-1.jpg");
+}
+.banner-image{
+    background-image: url("/banner-image.jpg");
+}
+.stades-image{
+    background-image: url("/stades_foot_monde.jpg");
+}
+.ffoot-image{
+    background-image: url("/femme-foot.jpg");
+}
+.ffoot-image-psg{
+    background-image: url("/femme-foot-psg.jpg");
+}
 .hero-image{
     width: 70vw;
     height: 60vh;
-    background-image: url("../public/stades_foot_monde.jpg");
+    background-image: url("/stades_foot_monde.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -14,6 +31,9 @@
     width: 70vw;
     height: 60vh;
     position: absolute;
+    background: linear-gradient(1deg,#000000 0%, rgba(255,255,255,0) 80%);
+}
+.linear-shadow{
     background: linear-gradient(1deg,#000000 0%, rgba(255,255,255,0) 80%);
 }
 
@@ -53,6 +73,9 @@
 .transition-smooth{
     transition : all .5s ease;
 }
+.hover-interactive:hover{
+    transform: scale(1.05);
+}
 
 .show-on-hover{
     max-width: 0;
@@ -88,9 +111,8 @@
 }
 
 .pattern-foot{
-    background-image: url("../public/pattern-foot.png");
+    background-image: url("/pattern-foot.png");
     background-blend-mode: multiply;
-
 }
 
 
