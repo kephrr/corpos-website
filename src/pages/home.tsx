@@ -6,8 +6,55 @@ import LargeCard from "../components/large-card.tsx";
 import Button from "../components/button.tsx";
 import Info from "../components/info-side.tsx";
 import Footer from "../components/footer.tsx";
+import PostGrid from "../components/post-grid.tsx";
+import {PostProps} from "../models/props.ts";
 
 export default function Home(){
+    const posts:PostProps[] =[
+        {
+            image: "femme-foot.jpg",
+            username: "Panthères de Dakar Corpos",
+            pseudo: "PDDC",
+            text: "[🟢🟡🔵]\n" +
+                "#pantheresdedakarcorpos\n" +
+                "#corposunjourcorpostoujours\n" +
+                "#trainingpddc\n" +
+                "#pddc\n" +
+                "\n" +
+                "Training des panthères de Dakar Corpos ce Samedi 15 Mars 2025 à l’école de police à partir de 16h30",
+            social: "Facebook",
+            date: "13 Mars 2025",
+        },
+        {
+            image: "banner-image.jpg",
+            username: "Panthères de Dakar Corpos",
+            pseudo: "PDDC",
+            text: "[🟢🟡🔵]\n" +
+                "#pantheresdedakarcorpos\n" +
+                "#corposunjourcorpostoujours\n" +
+                "#trainingpddc\n" +
+                "#pddc\n" +
+                "\n" +
+                "Training des panthères de Dakar Corpos ce Samedi 15 Mars 2025 à l’école de police à partir de 16h30",
+            social: "Facebook",
+            date: "13 Mars 2025",
+        },
+        {
+            image: "training-camp.jpg",
+            username: "Panthères de Dakar Corpos",
+            pseudo: "PDDC",
+            text: "[🟢🟡🔵]\n" +
+                "#pantheresdedakarcorpos\n" +
+                "#corposunjourcorpostoujours\n" +
+                "#trainingpddc\n" +
+                "#pddc\n" +
+                "\n" +
+                "Training des panthères de Dakar Corpos ce Samedi 15 Mars 2025 à l’école de police à partir de 16h30",
+            social: "Facebook",
+            date: "13 Mars 2025",
+        }
+    ]
+
     return <div className="box-border">
         <NavBar></NavBar>
         <HeroBanner></HeroBanner>
@@ -51,6 +98,10 @@ export default function Home(){
             </div>
             {/* Ajouter la partie posts des réseaux sociaux */}
         </div>
+        <div className="bg-black">
+            <span className="bebas-neue-regular text-white text-3xl py-2 flex justify-center">Suivez nous @PDDC</span>
+        </div>
+        <PostGrid posts={posts}></PostGrid>
         <Footer></Footer>
 
     </div>

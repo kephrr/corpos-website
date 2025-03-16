@@ -1,13 +1,5 @@
 import React from "react";
-
-interface CardProps {
-    title:string;
-    text:string;
-    img:string;
-    btn?: boolean;
-    btntext?:string;
-    btncolor?:string;
-}
+import {CardProps} from "../models/props.ts";
 
 const Card: React.FC<CardProps> = ({ title, text, img, btn, btntext, btncolor }) => {
     const styleContainer = "card "+img+" bg-cover relative rounded-lg transition-smooth hover-interactive";

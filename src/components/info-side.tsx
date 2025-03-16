@@ -1,11 +1,6 @@
 import Button from "./button.tsx";
+import {InfoProps} from "../models/props.ts";
 
-interface InfoProps {
-    img:string,
-    label:string,
-    title:string,
-    date:string
-}
 
 const Info: React.FunctionComponent<InfoProps> = ({img, label, title, date}: InfoProps) => {
     return <div className="flex gap-3 max-w-150">
