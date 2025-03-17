@@ -31,7 +31,14 @@ export interface CardProps {
     title: string;
     text: string;
     img: string;
+    url?: string;
     btn?: boolean;
     btntext?: string;
     btncolor?: string;
 }
+
+
+
+
+
+

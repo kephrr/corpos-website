@@ -1,6 +1,4 @@
-.nav-banner-custom{
-    box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.80);
-}
+
 .team-image{
     background-image: url("/team.jpg");
 }
@@ -74,11 +72,14 @@
 
 .button-y-hover:hover{
     background-color: #f5cd34;
-    color: #014aab;
+    color: oklch(0.707 0.022 261.325);
 }
 
 .transition-smooth{
     transition : all .5s ease;
+}
+.transition-quick{
+    transition : all .1s ease-out;
 }
 
 .jiggle-animation{

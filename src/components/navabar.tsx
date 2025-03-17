@@ -5,7 +5,9 @@ export default function NavBar(){
     const [iconColor, setIconColor] = useState("#ffff");
     return <div className="max-w-screen justify-between items-center bg-blue-custom flex text-white nav-banner-custom">
         <nav className="flex max-w-screen justify-between items-center">
-            <img src="/favicon.png" alt="corpos-logo" className="w-14.5 h-14.5 m-3"/>
+            <a href="/home">
+                <img src="/favicon.png" alt="corpos-logo" className="w-14 h-14 m-3"/>
+            </a>
             <ul className="flex h-full items-center gap-5 font-regular poppins-bold">
                 <li>
                     <a href="#">A propos</a>

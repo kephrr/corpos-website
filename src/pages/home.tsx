@@ -63,7 +63,7 @@ export default function Home(){
             <span className="bebas-neue-thick text-3xl my-10 blue-dark-custom">NOs ACTUALITÉS</span>
             <div className="flex justify-between mb-10 ">
                 <Card title={"RESERVATIONS"} text={"Réserver une place pour un de nos matchs"}
-                      img={"team-image"} btn={true} btntext={"Faire une réservation"}
+                      img={"team-image"} btn={true} btntext={"Faire une réservation"} url="/reservation"
                       btncolor={"bg-yellow-custom blue-custom"}
                 ></Card>
 
