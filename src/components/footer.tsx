@@ -3,13 +3,12 @@ export default function Footer(){
         <div className="max-w-screen justify-between items-center bg-blue-custom flex text-white">
             <nav className="flex max-w-screen justify-between items-center">
                 <img src="/favicon.png" alt="corpos-logo" className="w-14.5 h-14.5 m-3"/>
-                <span className="bebas-neue-thick text-4xl">PANTHÈRES DE DAKAR CORPOS PANTHÈRES DE DAKAR CORPOS</span>
+                <span className="bebas-neue-thick text-2xl md:text-4xl">PANTHÈRES DE DAKAR CORPOS PANTHÈRES DE DAKAR CORPOS</span>
             </nav>
-
             <span className="bebas-neue-regular text-3xl">#PDDC</span>
         </div>
         <div
-            className="max-w-screen min-h-60 flex gap-10 px-20 items-center bg-blue-dark-custom text-white pattern-foot">
+            className="max-w-screen min-h-60 flex gap-10 px-5 md:px-20 items-center bg-blue-dark-custom text-white pattern-foot">
             <ul>
                 <li>
                     <strong>Actualités</strong>
@@ -28,7 +27,7 @@ export default function Footer(){
             </ul>
         </div>
         <div
-            className="max-w-screen min-h-30 flex gap-10 px-20 items-center bg-black text-white">
+            className="max-w-screen min-h-30 flex gap-10 px-5 md:px-20 items-center bg-black text-white">
             <ul>
                 <li>
                     <strong>Mentions légales</strong>

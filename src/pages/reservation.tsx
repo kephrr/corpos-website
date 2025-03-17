@@ -3,12 +3,11 @@ import Footer from "../components/footer.tsx";
 
 function Reservation(){
     const iconSize = 20;
-    return <div className="min-h-100">
+    return <div className="">
         <NavBar></NavBar>
         <div className="flex flex-col mx-20 items-center py-4">
-
             <form action="/isSuccessful"
-                  className="min-w-150 bg-white p-6 m-4 rounded-lg text-gray-500 transition-quick">
+                  className="min-w-100 md:min-w-150 bg-white p-6 m-4 rounded-lg text-gray-500 transition-quick">
                 <h1 className="font-semibold text-2xl text-gray-500">Faire une réservation</h1>
                 <label className="form-group flex my-2 p-1.75 border-1 focus:border-2 rounded-lg
                         transition-quick gap-2

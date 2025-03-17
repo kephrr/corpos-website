@@ -2,7 +2,7 @@ import React from "react";
 import {CardProps} from "../models/props.ts";
 
 const Card: React.FC<CardProps> = ({ title, text, img, url, btn, btntext, btncolor }) => {
-    const styleContainer = "card "+img+" bg-cover relative rounded-lg transition-smooth hover-interactive";
+    const styleContainer = "card "+img+" bg-cover relative rounded-lg transition-smooth hover-interactive overflow-hidden";
     const styleBtn = btncolor+" px-8 py-2 rounded-sm oswald-bold cursor-pointer";
     const styleShadow = "absolute linear-shadow w-full h-full rounded-lg flex flex-col justify-end p-2";
     return <div className={styleContainer} >

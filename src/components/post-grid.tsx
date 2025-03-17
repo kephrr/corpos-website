@@ -7,7 +7,7 @@ interface PostGridProps {
 function PostGrid({ posts }: PostGridProps) {
     return <div className=" grid grid-cols-3 gap-1">
             {posts.map((p: PostProps) => (
-                <div className="max-h-100 transition-smooth overflow-hidden relative
+                <div className="max-h-35 lg:max-h-100 transition-smooth overflow-hidden relative
                 flex flex-col items-center justify-center">
                     <img className="w-full" src={p.image} alt="IMAGE"/>
                     <div className="flex flex-col justify-between p-5 absolute transition-smooth opacity-0 hover:opacity-85
