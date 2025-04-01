@@ -1,6 +1,4 @@
 import NavBar from "../components/navabar.tsx";
-//import Footer from "../components/footer.tsx";
-// import {CircleCheckBig} from "lucide-react";
 
 function Successful(){
     return<div>
