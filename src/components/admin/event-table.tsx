@@ -72,7 +72,7 @@ const EventTable = () => {
                             {item.prix}
                         </td>
                         <td className="px-6 py-4">
-                            <Badge color={3} content={item.etat}></Badge>
+                            <Badge color={null} content={item.etat}></Badge>
                         </td>
                         <td className="px-6 py-4 text-right">
                             <DetailsModal title="Détails" desc="Not a description"></DetailsModal>
