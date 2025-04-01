@@ -3,21 +3,35 @@ import Home from "./pages/home.tsx";
 import NotFound from './pages/home.tsx';
 import Reservation from "./pages/reservation.tsx";
 import Successful from "./pages/successful.tsx";
-import Admin from "./pages/admin.tsx";
+import Admin from "./layouts/admin.tsx";
+import EventCrud from "./pages/admin/events-crud.tsx";
+import TicketsCrud from "./pages/admin/tickets-crud.tsx";
+import Dashboard from "./pages/admin/dashboard.tsx";
 
 export const routes: RouteObject[] = [
     { path: "/", element: <Home /> },
     { path: "*", element: <NotFound /> },
     { path: "/reservation", element: <Reservation /> },
     { path: "/isSuccessful", element: <Successful /> },
-    { path: "/admin", element: <Admin /> },
+    //{ path: "/admin", element: <Admin /> },
     // { path: "/explore/details/:id", element: <DetailProfile /> },
-    /*{
-        path: "/explore",
-        element: <ExploreLayout />,
+    {
+        path: "/admin",
+        element: <Admin />,
         children: [
-            { path: "", element: <Explore /> },
-            { path: "details/:id", element: <DetailProfile /> },
+            { index:true, element: <Dashboard /> },
+            { path: "events", element: <EventCrud /> },
+            { path: "tickets", element: <TicketsCrud /> },
         ],
-    },*/
+    },
 ];
+
+
+
+
+
+
+
+
+
+

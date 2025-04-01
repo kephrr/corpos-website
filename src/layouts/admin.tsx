@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import EventTable from "../components/event-table.tsx";
-import TicketTable from "../components/ticket-table.tsx";
+// import EventTable from "../components/event-table.tsx";
+// import TicketTable from "../components/ticket-table.tsx";
+import {Outlet} from "react-router-dom";
+
 
 const Admin = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -36,15 +38,13 @@ const Admin = () => {
                 className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
                     sidebarOpen ? 'translate-x-0' : '-translate-x-full'
                 } sm:translate-x-0`}
-                aria-label="Sidebar"
-            >
+                aria-label="Sidebar">
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <ul className="space-y-2 font-medium">
                         <li>
                             <a
-                                href="#"
-                                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                            >
+                                href="/admin"
+                                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                 <svg
                                     className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                                     aria-hidden="true"
@@ -60,7 +60,7 @@ const Admin = () => {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="/admin/events"
                                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                             >
                                 <svg
@@ -80,7 +80,7 @@ const Admin = () => {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="/admin/tickets"
                                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                             >
                                 <svg
@@ -143,31 +143,9 @@ const Admin = () => {
                     </ul>
                 </div>
             </aside>
-
             {/* Main content */}
-            <div className="p-4 sm:ml-64">
-                <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-                    <div className="grid grid-cols-3 gap-4 mb-4">
-                        <div className="p-4 min-h-24 rounded-sm bg-gray-50 dark:bg-gray-800">
-                            <p>Total des réservations</p>
-                            <p className="text-2xl font-semibold">39</p>
-                        </div>
-                        <div className="p-4 min-h-24 rounded-sm bg-gray-50 dark:bg-gray-800">
-                            <p>Total mensuel</p>
-                            <p className="text-2xl font-semibold">19
-                                <small className="font-regular text-sm text-green-500">+10%</small>
-                            </p>
-                        </div>
-                        <div className="p-4 min-h-24 rounded-sm bg-gray-50 dark:bg-gray-800">
-                            <p>Evènements futurs</p>
-                            <p className="text-2xl font-semibold">4</p>
-                        </div>
-                    </div>
-                    <h1 className="py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">EVENEMENTS</h1>
-                    <EventTable></EventTable>
-                    <h1 className="py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">RESERVATIONS</h1>
-                    <TicketTable></TicketTable>
-                </div>
+            <div className="p-4 sm:ml-64 dark:bg-gray-600 min-h-screen">
+                <Outlet></Outlet>
             </div>
         </>
     );

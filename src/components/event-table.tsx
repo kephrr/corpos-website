@@ -1,4 +1,5 @@
 import DetailsModal from "./details-modal.tsx";
+import Badge from "./badge.tsx";
 
 const EventTable = () => {
     // Données de la table
@@ -71,15 +72,7 @@ const EventTable = () => {
                             {item.prix}
                         </td>
                         <td className="px-6 py-4">
-                            <select id="countries"
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
-                                    p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected>En cours</option>
-                                <option value="US">A venir</option>
-                                <option value="CA">Canada</option>
-                                <option value="FR">France</option>
-                                <option value="DE">Germany</option>
-                            </select>
+                            <Badge color={3} content={item.etat}></Badge>
                         </td>
                         <td className="px-6 py-4 text-right">
                             <DetailsModal title="Détails" desc="Not a description"></DetailsModal>

@@ -1,23 +1,31 @@
+import DetailsModal from "./details-modal.tsx";
+
 const TicketTable = () => {
     // Données de la table
     const tableData = [
         {
-            name: "Apple MacBook Pro 17\"",
-            color: "Silver",
-            category: "Laptop",
-            price: "$2999"
+            name: "Kephren NZE",
+            telephone: "784776687",
+            email: "kephnze@gmail.com",
+            event: "Indéfini",
+            state: "Invalid",
+            orderingDate: "2025-03-30"
         },
         {
-            name: "Microsoft Surface Pro",
-            color: "White",
-            category: "Laptop PC",
-            price: "$1999"
+            name: "Déborah AYINGONE",
+            telephone: "777954817",
+            email: "deborahamys@gmail.com",
+            event: "Match de GALA",
+            state: "Expired",
+            orderingDate: "2025-02-13"
         },
         {
-            name: "Magic Mouse 2",
-            color: "Black",
-            category: "Accessories",
-            price: "$99"
+            name: "Sunny Ginger",
+            telephone: "000000011",
+            email: "sunny-ginger@catmail.miaouw",
+            event: "Match d'ouverture féminin",
+            state: "Valid",
+            orderingDate: "2025-03-27"
         }
     ];
 
@@ -27,16 +35,16 @@ const TicketTable = () => {
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" className="px-6 py-3">
-                        Product name
+                        Nom
                     </th>
                     <th scope="col" className="px-6 py-3">
-                        Color
+                        Mail
                     </th>
                     <th scope="col" className="px-6 py-3">
-                        Category
+                        Tel
                     </th>
                     <th scope="col" className="px-6 py-3">
-                        Price
+                        Evènement
                     </th>
                     <th scope="col" className="px-6 py-3">
                         <span className="sr-only">Edit</span>
@@ -53,16 +61,18 @@ const TicketTable = () => {
                             {item.name}
                         </th>
                         <td className="px-6 py-4">
-                            {item.color}
+                            {item.email}
                         </td>
                         <td className="px-6 py-4">
-                            {item.category}
+                            {item.telephone}
                         </td>
                         <td className="px-6 py-4">
-                            {item.price}
+                            {item.event}
                         </td>
                         <td className="px-6 py-4 text-right">
-                            <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <DetailsModal title="Détails" desc={"Evènement : "+item.event
+                                +"\nDate de réservation : "+item.orderingDate
+                                +"\nEtat : "+item.state}></DetailsModal>
                         </td>
                     </tr>
                 ))}
