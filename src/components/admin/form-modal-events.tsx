@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import {EventStateValue} from "../../core/models/events.ts";
 
 const FormModalEvents = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
-        price: '',
-        category: '',
+        date: '',
+        duration: '',
+        state: '',
         description: ''
     });
 
@@ -35,7 +37,7 @@ const FormModalEvents = () => {
                 onClick={toggleModal}
                 type="button"
                 className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Toggle modal
+                Nouveau
             </button>
 
             {/* Modal */}
@@ -81,8 +83,9 @@ const FormModalEvents = () => {
                             <form onSubmit={handleSubmit} className="p-4 md:p-5">
                                 <div className="grid gap-4 mb-4 grid-cols-2">
                                     <div className="col-span-2">
-                                        <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                            Name
+                                        <label htmlFor="name"
+                                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                            Libelle
                                         </label>
                                         <input
                                             type="text"
@@ -91,48 +94,49 @@ const FormModalEvents = () => {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                            placeholder="Type product name"
+                                            placeholder="Libelle"
                                             required
                                         />
                                     </div>
 
                                     <div className="col-span-2 sm:col-span-1">
-                                        <label htmlFor="price" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                            Price
+                                        <label htmlFor="price"
+                                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                            Duration
                                         </label>
                                         <input
                                             type="number"
                                             name="price"
                                             id="price"
-                                            value={formData.price}
+                                            value={formData.duration}
                                             onChange={handleInputChange}
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                            placeholder="$2999"
+                                            placeholder="2.5 (2h30)"
                                             required
                                         />
                                     </div>
 
                                     <div className="col-span-2 sm:col-span-1">
-                                        <label htmlFor="category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                            Category
+                                        <label htmlFor="category"
+                                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                            Etat
                                         </label>
                                         <select
                                             id="category"
                                             name="category"
-                                            value={formData.category}
+                                            value={formData.state}
                                             onChange={handleInputChange}
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         >
-                                            <option value="">Select category</option>
-                                            <option value="TV">TV/Monitors</option>
-                                            <option value="PC">PC</option>
-                                            <option value="GA">Gaming/Console</option>
-                                            <option value="PH">Phones</option>
+
+                                            <option value="">Selectionner</option>
+                                            {EventStateValue.map(opt => <option value={opt.key}>{opt.value}</option>)}
                                         </select>
                                     </div>
 
                                     <div className="col-span-2">
-                                        <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                        <label htmlFor="description"
+                                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Product Description
                                         </label>
                                         <textarea

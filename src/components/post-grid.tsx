@@ -1,4 +1,4 @@
-import {PostProps} from "../models/props.ts";
+import {PostProps} from "../core/models/props.ts";
 
 interface PostGridProps {
     posts: PostProps[];

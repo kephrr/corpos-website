@@ -70,7 +70,7 @@ const TicketTable = () => {
                             {item.event}
                         </td>
                         <td className="px-6 py-4 text-right">
-                            <DetailsModal title="Détails" desc={"Evènement : "+item.event
+                            <DetailsModal libelle="" desc={"Evènement : "+item.event
                                 +"\nDate de réservation : "+item.orderingDate
                                 +"\nEtat : "+item.state}></DetailsModal>
                         </td>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import {EllipsisVertical} from "lucide-react";
 
 interface DetailPropos {
-    title: string,
+    libelle:string,
     desc: string,
 }
 
-const DetailsModal:React.FC<DetailPropos> = ({ title, desc }) => {
+const DetailsModal:React.FC<DetailPropos> = ({ libelle, desc }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleModal = () => {
@@ -22,9 +23,12 @@ const DetailsModal:React.FC<DetailPropos> = ({ title, desc }) => {
             <button
                 onClick={toggleModal}
                 type="button"
-                className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="cursor-pointer block text-white bg-blue-500 hover:bg-blue-600
+                focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium
+                rounded-sm text-sm p-1 text-center dark:bg-blue-600
+                dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-                {title}
+                <EllipsisVertical />
             </button>
 
             {/* Main modal */}
@@ -40,7 +44,7 @@ const DetailsModal:React.FC<DetailPropos> = ({ title, desc }) => {
                             {/* Modal header */}
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                    Detail de l'évènement
+                                    {libelle}
                                 </h3>
                                 <button
                                     type="button"

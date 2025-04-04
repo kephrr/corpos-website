@@ -7,7 +7,7 @@ import Button from "../components/button.tsx";
 import Info from "../components/info-side.tsx";
 import Footer from "../components/footer.tsx";
 import PostGrid from "../components/post-grid.tsx";
-import {PostProps} from "../models/props.ts";
+import {PostProps} from "../core/models/props.ts";
 
 export default function Home(){
     const posts:PostProps[] =[

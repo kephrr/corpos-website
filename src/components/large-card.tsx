@@ -1,5 +1,5 @@
 import React from "react"
-import {LargeCardProps} from "../models/props.ts";
+import {LargeCardProps} from "../core/models/props.ts";
 
 const LargeCard: React.FC<LargeCardProps> = ({ title, text, img, btntext, btncolor }: LargeCardProps) => {
 

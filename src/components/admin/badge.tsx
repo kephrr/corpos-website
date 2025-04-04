@@ -1,6 +1,6 @@
 interface BadgeProps {
     content: string,
-    color: number|null
+    color: number|undefined
 }
 
 const Badge: React.FC<BadgeProps> = (props: BadgeProps) => {

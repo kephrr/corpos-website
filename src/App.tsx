@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { routes } from "./routes";
+import { routes } from "./core/routes.tsx";
 import "./App.css";
 
 document.title = 'Site officiel des panthères de Dakar Corpos'

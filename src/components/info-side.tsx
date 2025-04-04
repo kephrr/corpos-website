@@ -1,5 +1,5 @@
 import Button from "./button.tsx";
-import {InfoProps} from "../models/props.ts";
+import {InfoProps} from "../core/models/props.ts";
 
 
 const Info: React.FunctionComponent<InfoProps> = ({img, label, title, date}: InfoProps) => {
