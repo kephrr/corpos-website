@@ -5,7 +5,7 @@ export interface EventItem{
     date: string;
     state: string;
     stateIndex: number;
-    duration: string;
+    duration: number;
     description: string;
 }
 

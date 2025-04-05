@@ -5,6 +5,7 @@ import {useResume} from "../../core/hook/use-dashboard.tsx";
 export default function Dashboard() {
     const { resume } = useResume();
     const data = resume?.results;
+    const diff = data?.thisMonthDifferential;
     return <div className="p-4">
         <h1 className="text-2xl font-semibold mb-2">Accueil</h1>
         <div className="grid grid-cols-3 gap-4 mb-4">
@@ -15,7 +16,7 @@ export default function Dashboard() {
             <div className="p-4 min-h-24 rounded-sm bg-gray-50 dark:bg-gray-800 dark:text-gray-200">
                 <p>Total mensuel</p>
                 <p className="text-2xl font-semibold">{data?.thisMonth}
-                    <small className="font-regular text-sm text-green-500">+{data?.thisMonthDifferential}%</small>
+                    <small className="font-regular text-sm text-green-500">{(diff!==undefined && diff<0)?diff:"+"+diff}%</small>
                 </p>
             </div>
             <div className="p-4 min-h-24 rounded-sm bg-gray-50 dark:bg-gray-800 dark:text-gray-200">

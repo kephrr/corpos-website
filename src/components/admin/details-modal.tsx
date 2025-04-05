@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import {EllipsisVertical} from "lucide-react";
+import {Text} from "lucide-react";
+import {EventItem} from "../../core/models/events.ts";
+import Badge from "./badge.tsx";
 
 interface DetailPropos {
-    libelle:string,
-    desc: string,
+    details: EventItem,
 }
 
-const DetailsModal:React.FC<DetailPropos> = ({ libelle, desc }) => {
+const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
@@ -16,6 +16,8 @@ const DetailsModal:React.FC<DetailPropos> = ({ libelle, desc }) => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
+    const temp = details.duration * 60
+    const duration:string = temp%60===0?Math.floor(temp/60)+"h":Math.floor(temp/60)+"h"+temp%60;
 
     return (
         <>
@@ -23,12 +25,12 @@ const DetailsModal:React.FC<DetailPropos> = ({ libelle, desc }) => {
             <button
                 onClick={toggleModal}
                 type="button"
-                className="cursor-pointer block text-white bg-blue-500 hover:bg-blue-600
-                focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium
-                rounded-sm text-sm p-1 text-center dark:bg-blue-600
-                dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="cursor-pointer block text-white hover:bg-gray-100
+                focus:ring-4 focus:outline-none font-medium
+                rounded-2xl text-sm p-1 text-center
+                dark:hover:bg-gray-100 dark:focus:ring-blue-800"
             >
-                <EllipsisVertical />
+                <Text color="#787878" />
             </button>
 
             {/* Main modal */}
@@ -44,12 +46,12 @@ const DetailsModal:React.FC<DetailPropos> = ({ libelle, desc }) => {
                             {/* Modal header */}
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                    {libelle}
+                                    {details.libelle}
                                 </h3>
                                 <button
                                     type="button"
                                     onClick={closeModal}
-                                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    className="cursor-pointer text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                 >
                                     <svg
                                         className="w-3 h-3"
@@ -71,23 +73,33 @@ const DetailsModal:React.FC<DetailPropos> = ({ libelle, desc }) => {
                             </div>
                             {/* Modal body */}
                             <div className="text-start p-4 md:p-5 space-y-4">
-                                <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                    {desc}
+                                <div className="py-0.1">
+                                    <Badge color={details.stateIndex} content={details.state}></Badge>
+                                </div>
+                                <p className="text-base leading-relaxed text-gray-600 dark:text-gray-500">
+                                    {details?.description}
                                 </p>
+                                <small className="text-base text-gray-600 dark:text-gray-500">
+                                    {details?.date}
+                                </small> <br/>
+                                <small className="text-base text-gray-600 dark:text-gray-500">
+                                    {duration}
+                                </small>
                             </div>
                             {/* Modal footer*/}
-                            <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                            <div
+                                className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                                 <button
                                     onClick={closeModal}
                                     type="button"
-                                    className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5
+                                    className="cursor-pointer text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5
                                     py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-blue-800">
                                     Supprimer
                                 </button>
                                 <button
                                     onClick={closeModal}
                                     type="button"
-                                    className="py-2 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                    className="cursor-pointer py-2 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                                     Archiver
                                 </button>
                             </div>

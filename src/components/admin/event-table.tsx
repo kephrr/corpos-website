@@ -59,7 +59,7 @@ const EventTable = ({data, loading, error}: EventTableProps) => {
                             <Badge color={item.stateIndex} content={item.state}></Badge>
                         </td>
                         <td className="px-6 py-4 text-right">
-                            <DetailsModal libelle={item.libelle} desc={item.description}></DetailsModal>
+                            <DetailsModal details={item}></DetailsModal>
                         </td>
                     </tr>
                 ))}
