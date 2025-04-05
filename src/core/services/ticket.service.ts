@@ -9,6 +9,6 @@ export const TicketService = {
         state?: number
     ): Promise<RestResponse<TicketItem[]>> => {
         const params = { page, size, ...(state && { state }) };
-        return api.get('/events', { params });
+        return api.get('/tickets', { params });
     },
 }
