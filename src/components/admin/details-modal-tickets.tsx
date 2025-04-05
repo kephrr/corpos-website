@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {Text} from "lucide-react";
-import {EventItem} from "../../core/models/events.ts";
 import Badge from "./badge.tsx";
+import {TicketItem} from "../../core/models/tickets.ts";
+import ContinueModal from "../continue-modal.tsx";
 
 interface DetailPropos {
-    details: EventItem,
+    details: TicketItem,
 }
 
-const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
+const DetailsModalTickets:React.FC<DetailPropos> = ({ details }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -16,8 +17,6 @@ const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
-    const temp = details.duration * 60
-    const duration:string = temp%60===0?Math.floor(temp/60)+"h":Math.floor(temp/60)+"h"+temp%60;
 
     return (
         <>
@@ -46,7 +45,7 @@ const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
                             {/* Modal header */}
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
                                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                                    {details.libelle}
+                                    {details.name}
                                 </h3>
                                 <button
                                     type="button"
@@ -77,13 +76,16 @@ const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
                                     <Badge color={details.stateIndex} content={details.state}></Badge>
                                 </div>
                                 <p className="text-base leading-relaxed text-gray-600 dark:text-gray-500">
-                                    {details?.description}
+                                    {details?.email}
                                 </p>
                                 <small className="text-base text-gray-600 dark:text-gray-500">
-                                    {details?.date}
+                                    {details?.telephone}
                                 </small> <br/>
                                 <small className="text-base text-gray-600 dark:text-gray-500">
-                                    {duration}
+                                    {details?.event}
+                                </small> <br/>
+                                <small className="text-base text-gray-600 dark:text-gray-500">
+                                    {details?.orderingDate}
                                 </small>
                             </div>
                             {/* Modal footer*/}
@@ -96,11 +98,16 @@ const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
                                     py-2 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-blue-800">
                                     Supprimer
                                 </button>
+                                <ContinueModal
+                                    title="Supprimer"
+                                    message="Are you sure you want to delete this product?"
+                                    onConfirm={()=>{}}
+                                />
                                 <button
                                     onClick={closeModal}
                                     type="button"
                                     className="cursor-pointer py-2 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                                    Archiver
+                                    Invalider
                                 </button>
                             </div>
 
@@ -109,7 +116,7 @@ const DetailsModal:React.FC<DetailPropos> = ({ details }) => {
                 </div>
             )}
         </>
-    );
+    )
 };
 
-export default DetailsModal;
+export default DetailsModalTickets;

@@ -5,14 +5,14 @@ import FormModalEvents from "../../components/admin/form-modal-events.tsx";
 export default function EventCrud(){
     const { data, loading, error } = useEvents(0,7);
 
-    return <div className="p-4">
-        <h1 className="text-2xl font-semibold mb-2 dark:text-white" >Gestion des évènements</h1>
+    return <div className="p-4 font-sans">
+        <h1 className="text-2xl font-bold mb-2 dark:text-white" >Gestion des évènements</h1>
         <div className="m-4 flex justify-between">
             <form className="max-w-lg">
                 <div className="flex">
                     <div className="relative w-full">
                         <input type="search" id="search-dropdown"
-                               className="block p-2.5 min-w-lg z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                               className="block p-2 min-w-lg z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border-1 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                                placeholder="Rechercher des évènements" required/>
                         <button type="submit"
                                 className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

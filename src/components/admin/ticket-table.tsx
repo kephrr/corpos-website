@@ -1,34 +1,21 @@
-import DetailsModal from "./details-modal.tsx";
 
-const TicketTable = () => {
-    // Données de la table
-    const tableData = [
-        {
-            name: "Kephren NZE",
-            telephone: "784776687",
-            email: "kephnze@gmail.com",
-            event: "Indéfini",
-            state: "Invalid",
-            orderingDate: "2025-03-30"
-        },
-        {
-            name: "Déborah AYINGONE",
-            telephone: "777954817",
-            email: "deborahamys@gmail.com",
-            event: "Match de GALA",
-            state: "Expired",
-            orderingDate: "2025-02-13"
-        },
-        {
-            name: "Sunny Ginger",
-            telephone: "000000011",
-            email: "sunny-ginger@catmail.miaouw",
-            event: "Match d'ouverture féminin",
-            state: "Valid",
-            orderingDate: "2025-03-27"
-        }
-    ];
+import DetailsModalTickets from "./details-modal-tickets.tsx";
+import {RestResponse} from "../../core/models/types.ts";
+import {TicketItem} from "../../core/models/tickets.ts";
+import {Loader} from "lucide-react";
 
+interface TicketTableProps {
+    data : RestResponse<TicketItem[]> | null;
+    loading : boolean;
+    error : string | null;
+}
+
+const TicketTable = ({data, loading, error}: TicketTableProps) => {
+    if (loading) return <div className="flex justify-center item-center w-full my-10">
+        <Loader></Loader>
+    </div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!data?.totalItems && data !== null)
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -52,10 +39,10 @@ const TicketTable = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {tableData.map((item, index) => (
+                {data.results.map((item, index) => (
                     <tr
                         key={index}
-                        className={`bg-white ${index < tableData.length - 1 ? 'border-b' : ''} dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600`}
+                        className={`bg-white ${index < data.results.length - 1 ? 'border-b' : ''} dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600`}
                     >
                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {item.name}
@@ -70,9 +57,7 @@ const TicketTable = () => {
                             {item.event}
                         </td>
                         <td className="px-6 py-4 text-right">
-                            <DetailsModal libelle="" desc={"Evènement : "+item.event
-                                +"\nDate de réservation : "+item.orderingDate
-                                +"\nEtat : "+item.state}></DetailsModal>
+                            <DetailsModalTickets details={item}></DetailsModalTickets>
                         </td>
                     </tr>
                 ))}
