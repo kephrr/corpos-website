@@ -9,7 +9,7 @@ interface ModalProps {
     onCancel?: () => void;
 }
 
-const ContinueModal: React.FC<ModalProps> = ({
+const ModalContinue: React.FC<ModalProps> = ({
                                          title,
                                          message,
                                          confirmText = "Oui, je suis sûre",
@@ -115,4 +115,4 @@ const ContinueModal: React.FC<ModalProps> = ({
     );
 };
 
-export default ContinueModal;
+export default ModalContinue;

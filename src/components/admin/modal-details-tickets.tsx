@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import {Text} from "lucide-react";
 import Badge from "./badge.tsx";
 import {TicketItem} from "../../core/models/tickets.ts";
-import ContinueModal from "../ui-ux/continue-modal.tsx";
+import ModalContinue from "../ui-ux/modal-continue.tsx";
 
 interface DetailPropos {
     details: TicketItem,
 }
 
-const DetailsModalTickets:React.FC<DetailPropos> = ({ details }) => {
+const ModalDetailsTickets:React.FC<DetailPropos> = ({ details }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -91,7 +91,7 @@ const DetailsModalTickets:React.FC<DetailPropos> = ({ details }) => {
                             {/* Modal footer*/}
                             <div
                                 className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                                <ContinueModal
+                                <ModalContinue
                                     title="Supprimer"
                                     message="Are you sure you want to delete this product?"
                                     onConfirm={closeModal}
@@ -112,4 +112,4 @@ const DetailsModalTickets:React.FC<DetailPropos> = ({ details }) => {
     )
 };
 
-export default DetailsModalTickets;
+export default ModalDetailsTickets;

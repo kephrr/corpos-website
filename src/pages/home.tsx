@@ -2,9 +2,9 @@ import NavBar from "../components/ui-ux/navabar.tsx"
 import HeroBanner from "../components/ui-ux/hero-banner.tsx";
 import TextBanner from "../components/text-banner.tsx";
 import Card from "../components/card.tsx";
-import LargeCard from "../components/large-card.tsx";
+import CardInfo from "../components/card-info.tsx";
 import Button from "../components/ui-ux/button.tsx";
-import Info from "../components/info-side.tsx";
+import Info from "../components/card-info-side.tsx";
 import Footer from "../components/ui-ux/footer.tsx";
 import PostGrid from "../components/post-grid.tsx";
 import {PostProps} from "../core/models/props.ts";
@@ -89,11 +89,11 @@ export default function Home(){
             <span className="bebas-neue-thick text-3xl  my-20 blue-dark-custom">NOTRE ORGANISATION</span>
             <RowBar></RowBar>
             <div className="flex justify-evenly">
-                <LargeCard img={"orga-image bg-center"}
-                           text={"Découvrez les organisateurs de vos évènements sportifs préférés"}
-                           title={"UNE ORGANISATION CHALEUREUSE"} btntext={"Voire plus"}
-                           btncolor={"bg-yellow-custom blue-custom"}
-                ></LargeCard>
+                <CardInfo img={"orga-image bg-center"}
+                          text={"Découvrez les organisateurs de vos évènements sportifs préférés"}
+                          title={"UNE ORGANISATION CHALEUREUSE"} btntext={"Voire plus"}
+                          btncolor={"bg-yellow-custom blue-custom"}
+                ></CardInfo>
             </div>
             <div className="flex justify-center p-10">
                 <Button content={"Plus d'actualités"} colors={"bg-green-custom text-white jiggle-animation"}></Button>

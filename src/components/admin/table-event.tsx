@@ -1,9 +1,9 @@
-import DetailsModalEvents from "./details-modal-events.tsx";
+import ModalDetailsEvents from "./modal-details-events.tsx";
 import Badge from "./badge.tsx";
 // import {Loader} from "lucide-react";
 import {RestResponse} from "../../core/models/types.ts";
 import {EventItem} from "../../core/models/events.ts";
-import {CircularLoader} from "../ui-ux/cirular-loader.tsx";
+import {CircularLoader} from "../ui-ux/loader-circular.tsx";
 
 interface EventTableProps {
     data : RestResponse<EventItem[]> | null;
@@ -11,7 +11,7 @@ interface EventTableProps {
     error : string | null;
 }
 
-const EventTable = ({data, loading, error}: EventTableProps) => {
+const TableEvent = ({data, loading, error}: EventTableProps) => {
     if (loading) return <div className="flex justify-center item-center w-full my-10">
         <CircularLoader></CircularLoader>
     </div>;
@@ -59,7 +59,7 @@ const EventTable = ({data, loading, error}: EventTableProps) => {
                             <Badge color={item.stateIndex} content={item.state}></Badge>
                         </td>
                         <td className="px-6 py-3 text-right">
-                            <DetailsModalEvents details={item}></DetailsModalEvents>
+                            <ModalDetailsEvents details={item}></ModalDetailsEvents>
                         </td>
                     </tr>
                 ))}
@@ -69,4 +69,4 @@ const EventTable = ({data, loading, error}: EventTableProps) => {
     );
 };
 
-export default EventTable;
+export default TableEvent;

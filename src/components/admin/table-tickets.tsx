@@ -1,9 +1,9 @@
 
-import DetailsModalTickets from "./details-modal-tickets.tsx";
+import ModalDetailsTickets from "./modal-details-tickets.tsx";
 import {RestResponse} from "../../core/models/types.ts";
 import {TicketItem} from "../../core/models/tickets.ts";
 // import {Loader} from "lucide-react";
-import {CircularLoader} from "../ui-ux/cirular-loader.tsx";
+import {CircularLoader} from "../ui-ux/loader-circular.tsx";
 
 interface TicketTableProps {
     data : RestResponse<TicketItem[]> | null;
@@ -11,7 +11,7 @@ interface TicketTableProps {
     error : string | null;
 }
 
-const TicketTable = ({data, loading, error}: TicketTableProps) => {
+const TableTickets = ({data, loading, error}: TicketTableProps) => {
     if (loading) return <div className="flex justify-center item-center w-full my-10">
         <CircularLoader></CircularLoader>
     </div>;
@@ -58,7 +58,7 @@ const TicketTable = ({data, loading, error}: TicketTableProps) => {
                             {item.event}
                         </td>
                         <td className="px-6 py-4 text-right">
-                            <DetailsModalTickets details={item}></DetailsModalTickets>
+                            <ModalDetailsTickets details={item}></ModalDetailsTickets>
                         </td>
                     </tr>
                 ))}
@@ -68,4 +68,4 @@ const TicketTable = ({data, loading, error}: TicketTableProps) => {
     );
 };
 
-export default TicketTable;
+export default TableTickets;

@@ -7,7 +7,7 @@ interface DetailPropos {
     details: EventItem,
 }
 
-const DetailsModalEvents:React.FC<DetailPropos> = ({ details }) => {
+const ModalDetailsEvents:React.FC<DetailPropos> = ({ details }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -112,4 +112,4 @@ const DetailsModalEvents:React.FC<DetailPropos> = ({ details }) => {
     );
 };
 
-export default DetailsModalEvents;
+export default ModalDetailsEvents;

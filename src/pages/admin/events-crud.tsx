@@ -1,6 +1,6 @@
-import EventTable from "../../components/admin/event-table.tsx";
+import TableEvent from "../../components/admin/table-event.tsx";
 import {useEvents} from "../../core/hook/use-events.tsx";
-import FormModalEvents from "../../components/admin/form-modal-events.tsx";
+import ModalFormEvents from "../../components/admin/modal-form-events.tsx";
 
 export default function EventCrud(){
     const { data, loading, error } = useEvents(0,7);
@@ -26,9 +26,9 @@ export default function EventCrud(){
                     </div>
                 </div>
             </form>
-            <FormModalEvents></FormModalEvents>
+            <ModalFormEvents></ModalFormEvents>
         </div>
-        <EventTable data={data} error={error} loading={loading}></EventTable>
+        <TableEvent data={data} error={error} loading={loading}></TableEvent>
     </div>
         ;
 }

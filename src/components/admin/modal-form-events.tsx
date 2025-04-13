@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {EventStateValue} from "../../core/models/events.ts";
 
-const FormModalEvents = () => {
+const ModalFormEvents = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -177,4 +177,4 @@ const FormModalEvents = () => {
     );
 };
 
-export default FormModalEvents;
+export default ModalFormEvents;

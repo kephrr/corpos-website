@@ -1,4 +1,4 @@
-import ToggleButton from "./ui-ux/toggle-button";
+import ToggleButton from "./ui-ux/button-toggle.tsx";
 import Avatar from "./ui-ux/avatar.tsx";
 import {useState} from "react";
 
