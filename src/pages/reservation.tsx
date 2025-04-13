@@ -1,5 +1,5 @@
-import NavBar from "../components/navabar.tsx";
-import Footer from "../components/footer.tsx";
+import NavBar from "../components/ui-ux/navabar.tsx";
+import Footer from "../components/ui-ux/footer.tsx";
 
 function Reservation(){
     const iconSize = 20;

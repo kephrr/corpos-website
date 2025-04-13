@@ -4,8 +4,8 @@ import {useState} from "react";
 export default function HeroBanner() {
     const [iconColor, setIconColor] = useState("#ffff");
     return <div className="overflow-x-hidden max-w-screen p-10 bg-blue-dark-custom pattern-foot">
-        <div className="hero-image md:w-250 md:h-80">
-            <div className="shadow-cover md:w-250 md:h-80 flex flex-col justify-end
+        <div className="hero-image md:w-230 md:h-80 md:mx-6">
+            <div className="shadow-cover md:w-230 md:h-80 flex flex-col justify-end
                             p-2 lg:px-5 lg:py-7">
                 <h1 className="text-white bebas-neue-thick text-3xl md:text-5xl">PANTHÈRES DE DAKAR CORPOS</h1>
                 <p className="text-white text-sm ">L'organisation de foot-ball communautaire des gabonais à Dakar</p>

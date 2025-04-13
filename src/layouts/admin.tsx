@@ -143,7 +143,7 @@ const Admin = () => {
                     </ul>
                 </div>
             </aside>
-            {/* Main content */}
+            {/* Main ui-ux */}
             <div className="p-4 sm:ml-64 dark:bg-gray-600 min-h-screen">
                 <Outlet></Outlet>
             </div>

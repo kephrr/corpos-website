@@ -1,4 +1,4 @@
-import Button from "./button.tsx";
+import Button from "./ui-ux/button.tsx";
 import {InfoProps} from "../core/models/props.ts";
 
 

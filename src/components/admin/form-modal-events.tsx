@@ -48,7 +48,7 @@ const FormModalEvents = () => {
                     className="fixed inset-0 z-50 flex justify-center items-center w-full p-4 overflow-y-auto overflow-x-hidden bg-black/50"
                 >
                     <div className="relative w-full max-w-md max-h-full">
-                        {/* Modal content */}
+                        {/* Modal ui-ux */}
                         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                             {/* Modal header */}
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">

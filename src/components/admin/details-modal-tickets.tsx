@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Text} from "lucide-react";
 import Badge from "./badge.tsx";
 import {TicketItem} from "../../core/models/tickets.ts";
-import ContinueModal from "../continue-modal.tsx";
+import ContinueModal from "../ui-ux/continue-modal.tsx";
 
 interface DetailPropos {
     details: TicketItem,
@@ -40,7 +40,7 @@ const DetailsModalTickets:React.FC<DetailPropos> = ({ details }) => {
                     className="fixed inset-0 z-50 flex justify-center items-center w-full p-4 overflow-y-auto overflow-x-hidden bg-black/50"
                 >
                     <div className="relative w-full max-w-2xl max-h-full">
-                        {/* Modal content */}
+                        {/* Modal ui-ux */}
                         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                             {/* Modal header */}
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">

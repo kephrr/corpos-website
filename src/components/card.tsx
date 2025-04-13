@@ -7,8 +7,8 @@ const Card: React.FC<CardProps> = ({ title, text, img, url, btn, btntext, btncol
     const styleShadow = "absolute linear-shadow w-full h-full rounded-lg flex flex-col justify-end p-2";
     return <div className={styleContainer} >
         <div className={styleShadow}>
-            <h1 className="text-white bebas-neue-thick text-5xl">{title}</h1>
-            <p className="text-white">{text}</p>
+            <h1 className="text-white bebas-neue-thick text-3xl">{title}</h1>
+            <p className="text-white text-sm mb-1">{text}</p>
             {btn &&
                 <a href={url} className="">
                     <button className={styleBtn}>{btntext}</button>

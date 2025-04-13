@@ -1,4 +1,4 @@
-import NavBar from "../components/navabar.tsx";
+import NavBar from "../components/ui-ux/navabar.tsx";
 
 function Successful(){
     return<div>

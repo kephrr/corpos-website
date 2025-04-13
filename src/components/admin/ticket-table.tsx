@@ -2,7 +2,8 @@
 import DetailsModalTickets from "./details-modal-tickets.tsx";
 import {RestResponse} from "../../core/models/types.ts";
 import {TicketItem} from "../../core/models/tickets.ts";
-import {Loader} from "lucide-react";
+// import {Loader} from "lucide-react";
+import {CircularLoader} from "../ui-ux/cirular-loader.tsx";
 
 interface TicketTableProps {
     data : RestResponse<TicketItem[]> | null;
@@ -12,7 +13,7 @@ interface TicketTableProps {
 
 const TicketTable = ({data, loading, error}: TicketTableProps) => {
     if (loading) return <div className="flex justify-center item-center w-full my-10">
-        <Loader></Loader>
+        <CircularLoader></CircularLoader>
     </div>;
     if (error) return <div>Error: {error}</div>;
     if (!data?.totalItems && data !== null)
