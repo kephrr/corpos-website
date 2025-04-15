@@ -5,14 +5,16 @@ function Reservation(){
     const iconSize = 20;
     return <div className="">
         <NavBar></NavBar>
+        <div className="py-7"></div>
         <div className="flex flex-col mx-20 items-center py-4">
             <form action="/isSuccessful"
-                  className="min-w-100 md:min-w-150 bg-white p-6 m-4 rounded-lg text-gray-500 transition-quick">
+                  className="min-w-100 md:min-w-150 bg-white p-6.5 m-5 rounded-lg text-gray-500 transition-quick">
                 <h1 className="font-semibold text-2xl text-gray-500">Faire une réservation</h1>
-                <label className="form-group flex my-2 p-1.75 border-1 focus:border-2 rounded-lg
+                <label className="form-group flex my-3 p-1.75 border-1 focus:border-2 rounded-lg
                         transition-quick gap-2
                         focus:outline-none border-gray-300 focus:border-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24"
+                         fill="none"
                          stroke="#99A1AFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          className="lucide lucide-contact-round">
                         <path d="M16 2v2"/>
@@ -25,10 +27,11 @@ function Reservation(){
                         className="text-sm outline-none w-full" required
                         type="text" placeholder="Nom complet"/>
                 </label>
-                <label className="form-group flex my-2 p-1.75 border-1 focus:border-2 rounded-lg
+                <label className="form-group flex my-3 p-1.75 border-1 focus:border-2 rounded-lg
                         transition-quick gap-2
                         focus:outline-none border-gray-300 focus:border-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24"
+                         fill="none"
                          stroke="#99A1AFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          className="lucide lucide-phone">
                         <path
@@ -39,10 +42,11 @@ function Reservation(){
                         type="number" placeholder="Numéro de téléphone"/>
                 </label>
 
-                <label className="form-group flex my-2 p-1.75 border-1 focus:border-2 rounded-lg
+                <label className="form-group flex my-3 p-1.75 border-1 focus:border-2 rounded-lg
                         transition-quick gap-2
                         focus:outline-none border-gray-300 focus:border-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24"
+                         fill="none"
                          stroke="#99A1AFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          className="lucide lucide-mail">
                         <rect width="20" height="16" x="2" y="4" rx="2"/>
@@ -52,10 +56,11 @@ function Reservation(){
                         className="text-sm outline-none w-full" required
                         type="email" placeholder="Mon-adresse@gmail.com"/>
                 </label>
-                <label className="form-group flex my-2 p-1.75 border-1 focus:border-2 rounded-lg
+                <label className="form-group flex my-3 p-1.75 border-1 focus:border-2 rounded-lg
                         transition-quick gap-2
                         focus:outline-none border-gray-300 focus:border-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24"
+                         fill="none"
                          stroke="#99A1AFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          className="lucide lucide-ticket">
                         <path
@@ -68,10 +73,11 @@ function Reservation(){
                         className="w-full text-sm outline-none cursor-not-allowed"
                         placeholder="Match de préparation féminin des corpos"/>
                 </label>
-                <label className="form-group flex my-2 p-1.75 border-1 focus:border-2 rounded-lg
+                <label className="form-group flex my-3 p-1.75 border-1 focus:border-2 rounded-lg
                         transition-quick gap-2
                         focus:outline-none border-gray-300 focus:border-blue-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} viewBox="0 0 24 24"
+                         fill="none"
                          stroke="#99A1AFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          className="lucide lucide-calendar-days">
                         <path d="M8 2v4"/>
@@ -90,7 +96,8 @@ function Reservation(){
                            type="text"/>
                 </label>
                 <a href="/isSuccessful">
-                    <button className="w-full cursor-pointer bg-blue-500 text-white text-md py-2 px-4 rounded-md">Réserver
+                    <button
+                        className="w-full cursor-pointer bg-blue-500 text-white text-md py-2 px-4 rounded-md">Réserver
                     </button>
                 </a>
 

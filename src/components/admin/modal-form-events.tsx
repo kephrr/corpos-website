@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import {EventStateValue} from "../../core/models/events.ts";
+import {EventItem, EventStateValue} from "../../core/models/events.ts";
+import {EventService} from "../../core/services/event.service.ts";
 
 const ModalFormEvents = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
+    const [formData, setFormData] = useState<EventItem>({
+        libelle: '',
         date: '',
-        duration: '',
+        duration: 0,
         state: '',
         description: ''
     });
@@ -26,7 +27,11 @@ const ModalFormEvents = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        // Ici vous ajouteriez votre logique d'envoi
+        EventService.create(formData).then(r=>{
+            console.log(r)
+        }).finally(() => {
+            alert("Evenement crée avec succès")
+        })
         toggleModal();
     };
 
@@ -83,15 +88,15 @@ const ModalFormEvents = () => {
                             <form onSubmit={handleSubmit} className="p-4 md:p-5">
                                 <div className="grid gap-4 mb-4 grid-cols-2">
                                     <div className="col-span-2">
-                                        <label htmlFor="name"
+                                        <label htmlFor="libelle"
                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Libelle
                                         </label>
                                         <input
                                             type="text"
-                                            name="name"
-                                            id="name"
-                                            value={formData.name}
+                                            name="libelle"
+                                            id="libelle"
+                                            value={formData.libelle}
                                             onChange={handleInputChange}
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                             placeholder="Libelle"
@@ -100,14 +105,14 @@ const ModalFormEvents = () => {
                                     </div>
 
                                     <div className="col-span-2 sm:col-span-1">
-                                        <label htmlFor="price"
+                                        <label htmlFor="duration"
                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Duration
                                         </label>
                                         <input
                                             type="number"
-                                            name="price"
-                                            id="price"
+                                            name="duration"
+                                            id="duration"
                                             value={formData.duration}
                                             onChange={handleInputChange}
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -115,20 +120,34 @@ const ModalFormEvents = () => {
                                             required
                                         />
                                     </div>
+                                    <div className="col-span-2 sm:col-span-1">
+                                        <label htmlFor="date"
+                                               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                            Duration
+                                        </label>
+                                        <input
+                                            type="date"
+                                            name="date"
+                                            id="date"
+                                            value={formData.date}
+                                            onChange={handleInputChange}
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            required
+                                        />
+                                    </div>
 
                                     <div className="col-span-2 sm:col-span-1">
-                                        <label htmlFor="category"
+                                        <label htmlFor="state"
                                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                             Etat
                                         </label>
                                         <select
-                                            id="category"
-                                            name="category"
+                                            id="state"
+                                            name="state"
                                             value={formData.state}
                                             onChange={handleInputChange}
                                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         >
-                                            <option value="">Selectionner</option>
                                             {EventStateValue.map(opt => <option value={opt.key}>{opt.value}</option>)}
                                         </select>
                                     </div>
@@ -152,7 +171,7 @@ const ModalFormEvents = () => {
 
                                 <button
                                     type="submit"
-                                    className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    className="cursor pointer text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 >
                                     <svg
                                         className="me-1 -ms-1 w-5 h-5"
@@ -166,7 +185,7 @@ const ModalFormEvents = () => {
                                             clipRule="evenodd"
                                         ></path>
                                     </svg>
-                                    Add new product
+                                    Ajouter
                                 </button>
                             </form>
                         </div>

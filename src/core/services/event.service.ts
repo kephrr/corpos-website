@@ -17,7 +17,13 @@ export const EventService = {
         return api.get(`/events/${id}`);
     },
 
-    create: async (event: Omit<Event, 'id'>): Promise<Event> => {
+    create: async (event: Omit<EventItem, 'id'>): Promise<EventItem> => {
         return api.post('/events', event);
     },
 };
+
+
+
+
+
+

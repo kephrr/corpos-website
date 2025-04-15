@@ -4,7 +4,7 @@ export interface EventItem{
     libelle: string;
     date: string;
     state: string;
-    stateIndex: number;
+    stateIndex?: number;
     duration: number;
     description: string;
 }

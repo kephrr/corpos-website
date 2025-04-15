@@ -7,7 +7,7 @@ import Admin from "../layouts/admin.tsx";
 import EventCrud from "../pages/admin/events-crud.tsx";
 import TicketsCrud from "../pages/admin/tickets-crud.tsx";
 import Dashboard from "../pages/admin/dashboard.tsx";
-import Laboratory from "../pages/lab/laboratory.tsx";
+import Laboratory from "../pages/laboratory.tsx";
 
 export const routes: RouteObject[] = [
     { path: "/", element: <Home /> },
