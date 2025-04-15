@@ -122,6 +122,18 @@
     animation-delay: 25s;
 }
 
+.animate-toast{
+    transform: translateY(10px);
+}
+.disappear{
+    opacity: 0;
+    visibility: hidden;
+}
+.appear{
+    opacity: 100;
+    visibility: visible;
+}
+
 @keyframes marquee {
     0% {
         transform: translate(0, 0);

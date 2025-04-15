@@ -53,7 +53,7 @@ const TableEvent = ({data, loading, error}: EventTableProps) => {
                             {item.date}
                         </td>
                         <td className="px-6 py-3">
-                            {(item.duration * 60)%60===0?Math.floor((item.duration * 60)/60)+"h":Math.floor((item.duration * 60)/60)+"h"+(item.duration * 60)%60}
+                            {(item.duration * 60) % 60 === 0 ? Math.floor((item.duration * 60) / 60) + "h" : Math.floor((item.duration * 60) / 60) + "h" + (item.duration * 60) % 60}
                         </td>
                         <td className="px-6 py-3">
                             <Badge color={item.stateIndex} content={item.state}></Badge>

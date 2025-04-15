@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {EventItem, EventStateValue} from "../../core/models/events.ts";
 import {EventService} from "../../core/services/event.service.ts";
 
-const ModalFormEvents = () => {
+interface FormEvents {
+    onSubmit:() => void;
+}
+
+const ModalFormEvents:React.FC<FormEvents> = ({onSubmit}:FormEvents) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState<EventItem>({
         libelle: '',
@@ -30,7 +34,7 @@ const ModalFormEvents = () => {
         EventService.create(formData).then(r=>{
             console.log(r)
         }).finally(() => {
-            alert("Evenement crée avec succès")
+            onSubmit()
         })
         toggleModal();
     };
@@ -62,7 +66,9 @@ const ModalFormEvents = () => {
                                 </h3>
                                 <button
                                     type="button"
-                                    onClick={toggleModal}
+                                    onClick={()=> {
+                                        toggleModal()
+                                    }}
                                     className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                                 >
                                     <svg
