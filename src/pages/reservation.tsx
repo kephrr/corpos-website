@@ -1,11 +1,6 @@
-import NavBar from "../components/ui-ux/navabar.tsx";
-import Footer from "../components/ui-ux/footer.tsx";
-
 function Reservation(){
     const iconSize = 20;
     return <div className="">
-        <NavBar></NavBar>
-        <div className="py-7"></div>
         <div className="flex flex-col mx-20 items-center py-4">
             <form action="/isSuccessful"
                   className="min-w-100 md:min-w-150 bg-white p-6.5 m-5 rounded-lg text-gray-500 transition-quick">
@@ -103,7 +98,6 @@ function Reservation(){
 
             </form>
         </div>
-        <Footer></Footer>
     </div>
 }
 

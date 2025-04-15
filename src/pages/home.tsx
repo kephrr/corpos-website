@@ -1,11 +1,9 @@
-import NavBar from "../components/ui-ux/navabar.tsx"
 import HeroBanner from "../components/ui-ux/hero-banner.tsx";
 import TextBanner from "../components/text-banner.tsx";
 import Card from "../components/card.tsx";
 import CardInfo from "../components/card-info.tsx";
 import Button from "../components/ui-ux/button.tsx";
 import Info from "../components/card-info-side.tsx";
-import Footer from "../components/ui-ux/footer.tsx";
 import PostGrid from "../components/post-grid.tsx";
 import {PostProps} from "../core/models/props.ts";
 import GameSchedule from "../components/game-schedule.tsx";
@@ -58,8 +56,7 @@ export default function Home(){
     ]
 
     return <div className="box-border">
-        <NavBar></NavBar>
-        <div className="py-7"></div>
+
         <GameSchedule></GameSchedule>
         <HeroBanner></HeroBanner>
         <TextBanner></TextBanner>
@@ -109,9 +106,6 @@ export default function Home(){
             <span className="bebas-neue-regular text-white text-3xl py-2 flex justify-center">Suivez nous @PDDC</span>
         </div>
         <PostGrid posts={posts}></PostGrid>
-        <Footer></Footer>
-
-
     </div>
         ;
 }

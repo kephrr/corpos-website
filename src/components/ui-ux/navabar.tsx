@@ -15,10 +15,10 @@ export default function NavBar(){
                     <a href="#">A propos</a>
                 </li>
                 <li>
-                    <a href="#">Évènements</a>
+                    <a href="/evenements">Évènements</a>
                 </li>
                 <li>
-                    <a href="#">Réservations</a>
+                    <a href="/reservation">Réservations</a>
                 </li>
             </ul>
         </nav>

@@ -8,12 +8,20 @@ import EventCrud from "../pages/admin/events-crud.tsx";
 import TicketsCrud from "../pages/admin/tickets-crud.tsx";
 import Dashboard from "../pages/admin/dashboard.tsx";
 import Laboratory from "../pages/laboratory.tsx";
+import Default from "../layouts/default-layout.tsx";
+import Evenements from "../pages/evenements.tsx";
 
 export const routes: RouteObject[] = [
-    { path: "/", element: <Home /> },
+    {
+        path: "/", element: <Default />,
+        children: [
+            { path:"home", index:true, element: <Home /> },
+            { path: "reservation", element: <Reservation /> },
+            { path: "evenements", element: <Evenements /> },
+            { path: "isSuccessful", element: <Successful /> },
+        ]
+    },
     { path: "*", element: <NotFound /> },
-    { path: "/reservation", element: <Reservation /> },
-    { path: "/isSuccessful", element: <Successful /> },
     { path: "/lab", element: <Laboratory /> },
     // { path: "/explore/details/:id", element: <DetailProfile /> },
     {
