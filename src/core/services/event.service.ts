@@ -2,6 +2,7 @@
 import api from './api.ts';
 import { RestResponse} from "../models/types.ts";
 import {EventItem} from "../models/events.ts";
+import {apiEventsURL} from "../resources.ts";
 
 export const EventService = {
     findAll: async (
@@ -10,15 +11,15 @@ export const EventService = {
         state?: number
     ): Promise<RestResponse<EventItem[]>> => {
         const params = { page, size, ...(state && { state }) };
-        return api.get('/events', { params });
+        return api.get(apiEventsURL, { params });
     },
 
-    findById: async (id: string): Promise<Event> => {
-        return api.get(`/events/${id}`);
+    findById: async (id: string): Promise<EventItem> => {
+        return api.get(`${apiEventsURL}/${id}`);
     },
 
     create: async (event: Omit<EventItem, 'id'>): Promise<EventItem> => {
-        return api.post('/events', event);
+        return api.post(apiEventsURL, event);
     },
 };
 

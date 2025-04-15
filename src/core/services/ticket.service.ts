@@ -1,6 +1,7 @@
 import {RestResponse} from "../models/types.ts";
 import api from "./api.ts";
 import {TicketItem} from "../models/tickets.ts";
+import {apiTicketsURL} from "../resources.ts";
 
 export const TicketService = {
     findAll: async (
@@ -9,6 +10,10 @@ export const TicketService = {
         state?: number
     ): Promise<RestResponse<TicketItem[]>> => {
         const params = { page, size, ...(state && { state }) };
-        return api.get('/tickets', { params });
+        return api.get(apiTicketsURL, { params });
+    },
+
+    create: async (event: Omit<TicketItem, 'id'>): Promise<TicketItem> => {
+        return api.post(apiTicketsURL, event);
     },
 }

@@ -18,13 +18,7 @@ export default function NavBar(){
                     <a href="#">Évènements</a>
                 </li>
                 <li>
-                    <a href="#">Actualités</a>
-                </li>
-                <li>
                     <a href="#">Réservations</a>
-                </li>
-                <li>
-                    <a href="#">Communauté</a>
                 </li>
             </ul>
         </nav>
