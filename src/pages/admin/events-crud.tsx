@@ -1,9 +1,19 @@
 import TableEvent from "../../components/admin/table-event.tsx";
 import {useEvents} from "../../core/hook/use-events.tsx";
 import ModalFormEvents from "../../components/admin/modal-form-events.tsx";
+//import {useState} from "react";
+//import {EventItem} from "../../core/models/events.ts";
+
 
 export default function EventCrud(){
-    const { data, loading, error } = useEvents(0,7);
+    const { data, loading, error } = useEvents(0,7)
+    /*const [filteredData, setFilteredData] = useState<EventItem[]>()
+    setFilteredData(data?.results)
+    function filterData(key:string){
+        const parsedData = data?.results.filter((e)=>(e.libelle.includes(key) || e.description.includes(key)))
+        setFilteredData(parsedData)
+        console.log("FILTER")
+    }*/
 
     function showNotification() {
         const toast = document.getElementById('toast-success')
@@ -47,6 +57,7 @@ export default function EventCrud(){
                 <div className="flex">
                     <div className="relative w-full">
                         <input type="search" id="search-dropdown"
+                               //onChange={(e)=> filterData(e.target.value)}
                                className="block p-2 min-w-lg z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-gray-50 border-1 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                                placeholder="Rechercher des évènements" required/>
                         <button type="submit"
@@ -63,7 +74,7 @@ export default function EventCrud(){
             </form>
             <ModalFormEvents onSubmit={showNotification}></ModalFormEvents>
         </div>
-        <TableEvent  data={data} error={error} loading={loading}></TableEvent>
+        <TableEvent results={data?.results} error={error} loading={loading}></TableEvent>
     </div>
         ;
 }

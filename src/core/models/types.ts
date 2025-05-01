@@ -3,8 +3,8 @@ export interface RestResponse<T>{
     pages?: number[],
     totalPages?: number,
     currentPage?: number,
-    hasPrev?: boolean,
-    hasNext?: boolean,
+    nextPage?: number,
+    previousPage?: number,
     results:T
     status:number
 }

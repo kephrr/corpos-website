@@ -8,9 +8,9 @@ export const EventService = {
     findAll: async (
         page: number = 0,
         size: number = 10,
-        state?: number
+        //stateFilter: string | null
     ): Promise<RestResponse<EventItem[]>> => {
-        const params = { page, size, ...(state && { state }) };
+        const params = { page, size };
         return api.get(apiEventsURL, { params });
     },
 

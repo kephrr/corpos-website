@@ -18,7 +18,7 @@ export const useEvents = (
         const fetchEvents = async () => {
             setLoading(true);
             try {
-                const events = await EventService.findAll(page, size, state);
+                const events = await EventService.findAll(page, size);
                 setData(events);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'Unknown error');
